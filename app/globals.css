@@ -505,3 +505,122 @@ main { overflow: hidden; }
 @media (max-width: 760px) {
   .partner-pair-soft { grid-auto-rows: auto; }.partner-pair-soft .partner-card,.partner-pair-soft .partner-card-self,.partner-pair-soft .partner-card-other { height: 225px; min-height: 225px; }.partner-card-heading { min-height: 62px; margin-top: 17px; }
 }
+
+/* Mobile integrity pass — portrait-safe hero, stacked request form and touch-ready controls */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 68px; }
+  .astralla-wordmark { min-height: 44px; justify-content: center; }
+  .astralla-appointment { min-height: 44px; display: flex; align-items: center; }
+  .constellation-menu { width: 44px; height: 44px; transform: none; }
+  .mobile-navigation { max-height: calc(100svh - 68px); overflow-y: auto; }
+  .mobile-navigation a { min-height: 52px; display: flex; align-items: center; }
+
+  .astralla-hero {
+    min-height: max(940px, 100svh);
+    align-items: end;
+    background-color: #2f0c33;
+    background-position: 67% top;
+    background-repeat: no-repeat;
+    background-size: auto 640px;
+  }
+  .astralla-hero::before {
+    background:
+      linear-gradient(180deg, rgba(35,12,39,.04) 0%, rgba(35,12,39,.08) 39%, rgba(40,12,44,.62) 52%, #2f0c33 67%, #2f0c33 100%),
+      linear-gradient(90deg, rgba(31,10,35,.24), transparent 70%);
+  }
+  .astralla-hero-copy { padding: 0 18px 92px; }
+  .astralla-hero-copy > p:first-child { margin-bottom: 18px; }
+  .astralla-hero h1 { max-width: 100%; font-size: clamp(46px, 13vw, 53px); line-height: .94; }
+  .astralla-hero-lead { margin-top: 20px; font-size: 15px; line-height: 1.48; }
+  .astralla-hero .astralla-button { min-height: 54px; margin-top: 24px; }
+  .astralla-hero-meta { bottom: 17px; }
+  .hero-star-one { top: 17%; }
+  .hero-star-two { top: 31%; }
+
+  .ask {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 72px;
+    padding: 88px 16px 92px;
+  }
+  .ask-copy, .ask-dialogue, .sent-state { width: 100%; max-width: 100%; min-width: 0; justify-self: stretch; }
+  .ask-dialogue { min-height: 0; padding: 0; }
+  .ask-dialogue::before { inset: -44px -12px; }
+  .ask-form-progress { margin-bottom: 34px; }
+  .ask-step h3 { font-size: clamp(42px, 12vw, 54px); overflow-wrap: anywhere; }
+  .ask-dialogue .ask-dialogue-field { margin-top: 32px; }
+  .ask-dialogue .ask-dialogue-field input, .ask-dialogue .ask-dialogue-field textarea { min-width: 0; font-size: 20px; }
+  .ask-next, .ask-back, .ask-dialogue .ask-submit { min-height: 44px; align-items: center; }
+  .ask-dialogue .consent { align-items: flex-start; }
+  .ask-dialogue .consent input { width: 20px; height: 20px; flex: 0 0 20px; }
+  .sent-state { min-height: 430px; }
+
+  .compatibility-focus button { min-height: 44px; }
+  .date-picker-layer { padding: 10px; }
+  .date-picker { width: min(460px, calc(100vw - 20px)); max-height: calc(100svh - 20px); }
+  .date-picker-heading > button { width: 44px; height: 44px; }
+  .date-picker-year { grid-template-columns: 44px 1fr 44px; }
+  .date-picker-year > button { min-width: 44px; min-height: 44px; }
+  .date-picker-footer > button { min-height: 46px; }
+
+  .font-lab { right: 10px; bottom: 12px; }
+  .font-lab-toggle { width: 48px; height: 48px; }
+  .font-lab-toggle span { font-size: 18px; }
+  .font-lab-toggle small { display: none; }
+  .font-lab aside { width: auto; position: fixed; left: 12px; right: 12px; top: auto; bottom: 70px; transform: translateY(16px); }
+  .font-lab.is-open aside { transform: none; }
+
+  .footer-columns a { min-height: 36px; display: flex; align-items: center; }
+  .footer-columns button { min-height: 40px; }
+  .footer-nav a { min-height: 30px; display: flex; align-items: center; }
+}
+
+@media (max-width: 360px) {
+  .astralla-hero { min-height: 920px; background-size: auto 590px; }
+  .astralla-hero-copy { padding-inline: 16px; padding-bottom: 86px; }
+  .astralla-hero h1 { font-size: 46px; }
+  .astralla-hero-lead { font-size: 14px; }
+  .guide-form { padding-inline: 18px; }
+  .date-picker { padding: 20px 13px; border-radius: 22px; }
+  .date-picker-months, .date-picker-week, .date-picker-days { gap: 3px; }
+  .date-picker-heading h3 { font-size: 25px; }
+  .date-picker-footer { margin-top: 18px; padding-top: 15px; }
+  .footer-brand-lockup strong { font-size: 43px; }
+}
+
+@media (max-width: 760px) {
+  .sphere-flow button, .sphere-flow button:nth-child(even) { min-width: 0; grid-template-columns: 22px 72px minmax(0, 1fr) 18px; gap: 10px; }
+  .sphere-flow-copy { min-width: 0; }
+  .sphere-flow h3, .sphere-flow p { overflow-wrap: anywhere; }
+  .article-grid a, .article-grid a:first-child { min-width: 0; padding-inline: 18px; grid-template-columns: 30px 52px minmax(0, 1fr); column-gap: 9px; }
+  .article-grid h3 { min-width: 0; overflow-wrap: anywhere; }
+  .compatibility-copy, .compatibility-tool { min-width: 0; }
+}
+
+@media (max-width: 360px) {
+  .zodiac-orbit { min-width: 0; }
+  .zodiac-orbit button, .zodiac-orbit button:nth-child(3n+2) { min-width: 0; padding-inline: 0; }
+  .zodiac-drawing { width: 110px; height: 110px; }
+  .zodiac-orbit strong { font-size: 20px; }
+  .sphere-flow button, .sphere-flow button:nth-child(even) { grid-template-columns: 18px 58px minmax(0, 1fr) 14px; gap: 8px; }
+  .sphere-flow-art { width: 58px; height: 58px; }
+  .sphere-flow h3 { font-size: 22px; }
+  .compatibility h2 { font-size: 38px; overflow-wrap: anywhere; }
+  .article-grid a, .article-grid a:first-child { padding-inline: 14px; grid-template-columns: 26px 42px minmax(0, 1fr); column-gap: 7px; }
+  .article-grid h3 { font-size: 24px; }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .guide-section, .compatibility, .about, .about-immersive, .ask { grid-template-columns: minmax(0, 1fr); gap: 70px; }
+  .about-immersive { min-height: 0; padding: 100px 50px; }
+  .about-portrait { min-height: 720px; margin: 0; }
+  .compatibility-tool, .compatibility-copy { min-width: 0; }
+  .compatibility-form-v2 { width: min(690px, 100%); }
+  .ask { min-height: 0; }
+  .ask-dialogue, .sent-state { width: min(700px, 100%); justify-self: stretch; }
+  .format-river article, .format-river article:nth-child(even) { width: 100%; margin-left: 0; grid-template-columns: 140px 60px minmax(0, 1fr) 68px; gap: 16px; }
+  .sphere-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 34px; }
+  .sphere-flow button, .sphere-flow button:nth-child(even) { min-width: 0; grid-template-columns: 20px 70px minmax(0, 1fr) 18px; gap: 8px; }
+  .sphere-flow-copy { min-width: 0; }
+  .sphere-flow h3, .sphere-flow p { overflow-wrap: anywhere; }
+}

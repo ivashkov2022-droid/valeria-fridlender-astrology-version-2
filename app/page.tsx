@@ -130,9 +130,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = modalSphere || mobileOpen ? "hidden" : "";
+    document.body.style.overflow = modalSphere || mobileOpen || datePickerTarget ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [modalSphere, mobileOpen]);
+  }, [modalSphere, mobileOpen, datePickerTarget]);
 
   function goToQuestion(value: string, sphereId?: string) {
     if (sphereId) setActiveId(sphereId);
@@ -199,7 +199,7 @@ export default function Home() {
       <div className={`astralla-preloader ${loaded ? "is-hidden" : ""}`} aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></div>
 
       <div className={`font-lab ${fontPanelOpen ? "is-open" : ""}`}>
-        <button className="font-lab-toggle" type="button" aria-expanded={fontPanelOpen} onClick={() => setFontPanelOpen((value) => !value)}><span>Aa</span><small>Шрифты</small></button>
+        <button className="font-lab-toggle" type="button" aria-label="Настроить шрифты" aria-expanded={fontPanelOpen} onClick={() => setFontPanelOpen((value) => !value)}><span>Aa</span><small>Шрифты</small></button>
         <aside aria-label="Конструктор шрифтов">
           <div className="font-lab-heading"><span>Примерить типографику</span><button type="button" aria-label="Закрыть конструктор" onClick={() => setFontPanelOpen(false)}>×</button></div>
           <p>Выберите пару — весь сайт изменится сразу.</p>
